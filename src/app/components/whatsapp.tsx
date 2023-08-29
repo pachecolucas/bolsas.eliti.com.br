@@ -12,8 +12,8 @@ export default function Whatsapp({ result }: Props) {
       </h2>
 
       <p className="text-sm px-10">
-        Se você quer garantir sua vaga na ELITI nesta condições entre em contato
-        com nosso Whatsapp abaixo e peça pelo pelo{" "}
+        Se você quer garantir sua vaga na ELITI nestas condições entre em
+        contato com nosso Whatsapp abaixo e peça pelo{" "}
         <span className="font-bold text-lg">Desafio nº 01</span>:
       </p>
 
