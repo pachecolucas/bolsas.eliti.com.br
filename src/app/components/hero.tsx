@@ -13,8 +13,8 @@ export default function Hero() {
         desconto
       </p>
       <p className="text-xs text-slate-600">
-        Responda ao breve questionário sócio-econômico abaixo para sabermos
-        quanto apoio você precisa para começar a estudar:
+        Responda ao questionário sócio-econômico abaixo para sabermos quanto
+        apoio você precisa para começar a estudar:
       </p>
     </div>
   );

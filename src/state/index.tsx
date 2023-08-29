@@ -130,7 +130,7 @@ const QUESTIONS: Questions = [
     key: "admin",
     icon: iconPen,
     title:
-      "PODE PAGAR 145 REAIS POR MÊS PARA AJUDAR COM AS DESPESAS ADMINISTRATIVAS DA ELITI?",
+      "VOCÊ PODE PAGAR 145 REAIS POR MÊS PARA AJUDAR COM AS DESPESAS ADMINISTRATIVAS DA ELITI?",
     description:
       "Este são gastos para a manutenção da escola incluindo: despesas com líderes bolsistas, marketing e escritório",
     positive: [
