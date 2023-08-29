@@ -96,7 +96,7 @@ const QUESTIONS: Questions = [
     description:
       "Responda não se você não tem dinheiro para pagar pelo seu próprio transporte para ir à Eliti",
     positive: [
-      "Que bom que pode pagar pelo seu transporte! Assim vamos economizar aproximandamente 240 reais todo mês com você.",
+      "Que bom que pode pagar pelo seu transporte! Assim vamos economizar aproximadamente 240 reais todo mês com você.",
     ],
     negative: [
       "Neste caso a Eliti irá verificar a possibilidade de arcar com o seu transporte. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
@@ -115,7 +115,7 @@ const QUESTIONS: Questions = [
     description:
       "A alimentação na Eliti é de altíssima qualidade nutricional sendo oferecida para todos sem exceção",
     positive: [
-      "Que bom que pode pagar pela sua alimentação! Assim vamos economizar aproximandamente 240 reais todo mês com você.",
+      "Que bom que pode pagar pela sua alimentação! Assim vamos economizar aproximadamente 240 reais todo mês com você.",
     ],
     negative: [
       "Neste caso a Eliti irá verificar a possibilidade pagar pela sua alimentação. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
@@ -134,7 +134,7 @@ const QUESTIONS: Questions = [
     description:
       "Este são gastos para a manutenção da escola incluindo: despesas com líderes bolsistas, marketing e escritório",
     positive: [
-      "Que bom que pode apoiar com os nossos gastas administrativos! Assim vamos economizar aproximandamente 145 reais todo mês com você.",
+      "Que bom que pode apoiar com os nossos gastas administrativos! Assim vamos economizar aproximadamente 145 reais todo mês com você.",
     ],
     negative: [
       "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você. Para isso, vamos gastar aproximadamente 145 reais a mais todo mês.",
@@ -153,7 +153,7 @@ const QUESTIONS: Questions = [
     description:
       "O custo dos professores da ELITI está avaliado em 240 reais por estudante por mês",
     positive: [
-      "Que bom que pode contribuir com os nossos educadores! Assim vamos economizar aproximandamente 240 reais todo mês com você.",
+      "Que bom que pode contribuir com os nossos educadores! Assim vamos economizar aproximadamente 240 reais todo mês com você.",
     ],
     negative: [
       "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
