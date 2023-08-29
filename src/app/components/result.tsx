@@ -8,10 +8,11 @@ type Props = {
 };
 
 export default function Result({ result }: Props) {
-  const [percents, setPercents] = useState({ eliti: "0%", student: "0%" });
+  const [status, setStatus] = useState({ eliti: "0%", student: "0%" });
+  // const [status, setStatus] = useState({ linha1: "", linha2: "", linha3: "" });
 
   useEffect(() => {
-    setPercents({
+    setStatus({
       eliti: `${Math.round(result.eliti.percent * 100)}%`,
       student: `${Math.round(result.student.percent * 100)}%`,
     });
@@ -26,17 +27,60 @@ export default function Result({ result }: Props) {
         Resultado do seu teste sócio-econômico
       </h2>
 
-      <div className="bg-gradient-to-r from-red-500 to-orange-400 py-5">
-        <p className="text-sm">Você precisa de uma bolsa de estudo</p>
-        <p className="text-xl">
-          com{" "}
-          <span className="font-black">
-            {Math.round(result.percent * 100)}%
-          </span>{" "}
-          de desconto
-        </p>
-        <p className="text-sm">para estudar na ELITI</p>
-      </div>
+      {result.student.amount > result.eliti.amount && (
+        <div className="bg-gradient-to-r from-green-900 to-green-600 p-5">
+          <p className="text-sm">
+            <span className="text-xl font-bold block uppercase">
+              Parabéns!!!
+            </span>
+            Ao pagar a quantia de{" "}
+            <span className="font-bold">{result.student.amount},00</span> reais
+            por mês para a ELITI, além de pagar pelo seu curso, você vai estar
+            contribuindo para que outros estudantes que não podem pagar também
+            possam estudar em nossa escola.
+          </p>
+        </div>
+      )}
+
+      {result.student.amount == result.eliti.amount && (
+        <div className="bg-gradient-to-r from-blue-700 to-blue-400 p-5">
+          <p className="text-sm">
+            <span className="text-xl font-bold block">
+              Você pode pagar pelo seu curso
+            </span>
+            Você não precisa de nenhuma ajuda financeira e estará cobrindo todos
+            os seus custos individuais ao investir
+            <span className="font-bold text-md">
+              {" "}
+              {result.student.amount}
+            </span>{" "}
+            reais mensais para estudar na ELITI.
+          </p>
+        </div>
+      )}
+
+      {result.student.amount < result.eliti.amount && (
+        <div className="bg-gradient-to-r from-red-500 to-orange-400 p-5">
+          <p className="text-sm">
+            <span className="text-xl font-bold block uppercase">
+              Estudante precisa de ajuda
+            </span>
+            Para estudar na ELITI você precisa de uma bolsa de{" "}
+            <span className="font-bold text-lg">
+              {Math.round(result.percent * 100)}%
+            </span>{" "}
+            de desconto
+            {result.questions.transport.eliti > 0 && (
+              <span>
+                {" "}
+                mais o{" "}
+                <span className="font-bold text-md">auxílio transporte</span>
+              </span>
+            )}
+            .
+          </p>
+        </div>
+      )}
 
       <div className="flex flex-col gap-3 my-3">
         <p className="text-xs uppercase tracking-widest">Ponto de equilíbrio</p>
@@ -45,13 +89,13 @@ export default function Result({ result }: Props) {
           <div className="absolute h-8 border border-white left-[50%] bottom-0"></div>
           <div
             className={`rounded-l-full bg-gradient-to-r from-green-900 to-green-500 text-xs py-1 min-w-fit text-left px-4 font-bold whitespace-nowrap`}
-            style={{ width: percents.student }}
+            style={{ width: status.student }}
           >
             R$ {result.student.amount},00
           </div>
           <div
             className={`rounded-r-full bg-gradient-to-r from-orange-400 to-red-500 text-xs py-1 min-w-fit text-right px-4 font-bold whitespace-nowrap`}
-            style={{ width: percents.eliti }}
+            style={{ width: status.eliti }}
           >
             R$ {result.eliti.amount},00
           </div>

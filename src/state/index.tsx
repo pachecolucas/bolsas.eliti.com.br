@@ -45,7 +45,7 @@ export type Questions = [
       eliti: number;
       student: number;
     };
-    value: null | -1 | 1;
+    value: null | true | false;
   },
   {
     key: "admin";
@@ -58,7 +58,7 @@ export type Questions = [
       eliti: number;
       student: number;
     };
-    value: null | -1 | 1;
+    value: null | true | false;
   },
   {
     key: "teacher";
@@ -71,7 +71,7 @@ export type Questions = [
       eliti: number;
       student: number;
     };
-    value: null | -1 | 1;
+    value: null | true | false;
   },
   {
     key: "donate";
@@ -84,7 +84,7 @@ export type Questions = [
       eliti: number;
       student: number;
     };
-    value: null | -1 | 1;
+    value: null | true | false;
   }
 ];
 
@@ -94,20 +94,18 @@ const QUESTIONS: Questions = [
     icon: iconBus,
     title: "VOCÊ PODE PAGAR PELO SEU TRANSPORTE PARA VIR ATÉ A ELITI?",
     description:
-      "Responda não se você não tem dinheiro para pagar pelo ser próprio transporte para ir à Eliti",
+      "Responda não se você não tem dinheiro para pagar pelo seu próprio transporte para ir à Eliti",
     positive: [
-      "Que bom que pode pagar pelo seu transporte!",
-      "Assim vamos economizar aproximandamente 240 reais todo mês com você.",
+      "Que bom que pode pagar pelo seu transporte! Assim vamos economizar aproximandamente 240 reais todo mês com você.",
     ],
     negative: [
-      "Neste caso a Eliti irá verificar a possibilidade de acarcar com o seu transporte.",
-      "Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
+      "Neste caso a Eliti irá verificar a possibilidade de arcar com o seu transporte. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
     ],
     investiment: {
       eliti: 240,
       student: 0,
     },
-    value: null,
+    value: true,
   },
   {
     key: "food",
@@ -117,18 +115,16 @@ const QUESTIONS: Questions = [
     description:
       "A alimentação na Eliti é de altíssima qualidade nutricional sendo oferecida para todos sem exceção",
     positive: [
-      "Que bom que pode pagar pela sua alimentação!",
-      "Assim vamos economizar aproximandamente 240 reais todo mês com você.",
+      "Que bom que pode pagar pela sua alimentação! Assim vamos economizar aproximandamente 240 reais todo mês com você.",
     ],
     negative: [
-      "Neste caso a Eliti irá verificar a possibilidade pagar pela sua alimentação.",
-      "Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
+      "Neste caso a Eliti irá verificar a possibilidade pagar pela sua alimentação. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
     ],
     investiment: {
       eliti: 240,
       student: 240,
     },
-    value: null,
+    value: true,
   },
   {
     key: "admin",
@@ -138,18 +134,16 @@ const QUESTIONS: Questions = [
     description:
       "Este são gastos para a manutenção da escola incluindo: despesas com líderes bolsistas, marketing e escritório",
     positive: [
-      "Que bom que pode apoiar com os nossos gastas administrativos!",
-      "Assim vamos economizar aproximandamente 145 reais todo mês com você.",
+      "Que bom que pode apoiar com os nossos gastas administrativos! Assim vamos economizar aproximandamente 145 reais todo mês com você.",
     ],
     negative: [
-      "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você.",
-      "Para isso, vamos gastar aproximadamente 145 reais a mais todo mês.",
+      "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você. Para isso, vamos gastar aproximadamente 145 reais a mais todo mês.",
     ],
     investiment: {
       eliti: 145,
       student: 145,
     },
-    value: null,
+    value: true,
   },
   {
     key: "teacher",
@@ -159,18 +153,16 @@ const QUESTIONS: Questions = [
     description:
       "O custo dos professores da ELITI está avaliado em 240 reais por estudante por mês",
     positive: [
-      "Que bom que pode contribuir com os nossos educadores!",
-      "Assim vamos economizar aproximandamente 240 reais todo mês com você.",
+      "Que bom que pode contribuir com os nossos educadores! Assim vamos economizar aproximandamente 240 reais todo mês com você.",
     ],
     negative: [
-      "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você.",
-      "Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
+      "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
     ],
     investiment: {
       eliti: 240,
       student: 240,
     },
-    value: null,
+    value: true,
   },
   {
     key: "donate",
@@ -189,7 +181,7 @@ const QUESTIONS: Questions = [
       eliti: 0,
       student: 385,
     },
-    value: null,
+    value: true,
   },
 ];
 
@@ -312,7 +304,8 @@ export function getResult(questions: Questions): Result {
     result.student.amount / (result.eliti.amount + result.student.amount);
 
   result.percent =
-    result.eliti.amount / (result.eliti.amount + result.student.amount);
+    (result.eliti.amount - result.student.amount) /
+    (result.eliti.amount + result.student.amount);
 
   // balance
   result.balance = result.student.amount - result.eliti.amount;

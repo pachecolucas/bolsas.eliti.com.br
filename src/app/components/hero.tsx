@@ -7,7 +7,7 @@ export default function Hero() {
       </h1>
       <p className="text-slate-600">
         Nosso treinamento custa{" "}
-        <span className="text-red-500 font-bold">1.250</span> reias por mês e
+        <span className="text-red-500 font-bold">1.010,00</span> reias por mês e
         oferemos bolsas de acordo com a necessidade de cada estudante que podem
         chegar a <span className="text-green-500 font-bold">100%</span> de
         desconto
