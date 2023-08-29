@@ -1,4 +1,16 @@
-export default function Result() {
+"use client";
+
+import { Questions, Question } from "@/state";
+import { useEffect } from "react";
+
+type Props = {
+  questions: Questions;
+};
+
+export default function Result({ questions }: Props) {
+  useEffect(() => {
+    console.log("Hora de calcular resultado");
+  }, [questions]);
   return (
     <div className="my-10 flex flex-col gap-7 py-7 bg-[#0F172A] rounded-2xl shadow-2xl text-white text-center">
       <h2 className="uppercase font-bold text-sm">
