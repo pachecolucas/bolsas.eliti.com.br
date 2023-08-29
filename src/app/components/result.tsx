@@ -18,12 +18,13 @@ export default function Result({ result }: Props) {
   }, [result]);
 
   return (
-    <div className="my-10 flex flex-col gap-7 py-7 bg-[#0F172A] rounded-2xl shadow-2xl text-white text-center">
+    <div
+      onClick={() => console.log(result)}
+      className="my-10 flex flex-col gap-7 py-7 bg-[#0F172A] rounded-2xl shadow-2xl text-white text-center"
+    >
       <h2 className="uppercase font-bold text-sm">
         Resultado do seu teste sócio-econômico
       </h2>
-
-      <pre className="text-left">{JSON.stringify(result, null, 2)}</pre>
 
       <div className="bg-gradient-to-r from-red-500 to-orange-400 py-5">
         <p className="text-sm">Você precisa de uma bolsa de estudo</p>
@@ -56,7 +57,7 @@ export default function Result({ result }: Props) {
           </div>
         </div>
 
-        <div className="text-[10px] uppercase tracking-widest flex">
+        <div className="text-xs font-bold uppercase tracking-widest flex">
           <p className="flex-1 text-left pl-5 text-green-400">
             Quando você pagará
             <br />
@@ -70,14 +71,14 @@ export default function Result({ result }: Props) {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <p className="text-xs uppercase tracking-widest">
           Seu saldo com a ELITI ao final do mês
         </p>
         <p className="text-2xl font-extrabold text-red-500">
           R$ {result.balance.toFixed(2)}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }

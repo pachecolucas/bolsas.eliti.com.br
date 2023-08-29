@@ -21,8 +21,12 @@ export default function Home() {
     <div className="max-w-[800px] mx-auto px-5 text-slate-900">
       <Hero />
       <Questions questions={questions} setQuestions={setQuestions} />
-      <Result result={result} />
-      <Whatsapp />
+      {result.completed && (
+        <>
+          <Result result={result} />
+          <Whatsapp result={result} />
+        </>
+      )}
     </div>
   );
 }
