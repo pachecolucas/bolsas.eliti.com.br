@@ -1,26 +1,28 @@
 "use client";
 
-import { Questions, Question } from "@/state";
-import { useEffect } from "react";
+import { Result as ResultType } from "@/state";
 
 type Props = {
-  questions: Questions;
+  result: ResultType;
 };
 
-export default function Result({ questions }: Props) {
-  useEffect(() => {
-    console.log("Hora de calcular resultado");
-  }, [questions]);
+export default function Result({ result }: Props) {
   return (
     <div className="my-10 flex flex-col gap-7 py-7 bg-[#0F172A] rounded-2xl shadow-2xl text-white text-center">
       <h2 className="uppercase font-bold text-sm">
         Resultado do seu teste sócio-econômico
       </h2>
 
+      <pre className="text-left">{JSON.stringify(result, null, 2)}</pre>
+
       <div className="bg-gradient-to-r from-red-500 to-orange-400 py-5">
         <p className="text-sm">Você precisa de uma bolsa de estudo</p>
         <p className="text-xl">
-          com <span className="font-black">27%</span> de desconto
+          com{" "}
+          <span className="font-black">
+            {Math.round(result.percent * 100)}%
+          </span>{" "}
+          de desconto
         </p>
         <p className="text-sm">para estudar na ELITI</p>
       </div>
@@ -30,11 +32,17 @@ export default function Result({ questions }: Props) {
 
         <div className="mx-5 rounded-full flex border border-white relative">
           <div className="absolute h-8 border border-white left-[50%] bottom-0"></div>
-          <div className="rounded-l-full bg-gradient-to-r from-green-900 to-green-500 text-xs py-1 w-[30%] min-w-fit text-left px-4 font-bold whitespace-nowrap">
-            R$ 635,00
+          <div
+            className={`w-[50%] rounded-l-full bg-gradient-to-r from-green-900 to-green-500 text-xs py-1 min-w-fit text-left px-4 font-bold whitespace-nowrap`}
+          >
+            R$ {result.student.amount},00 (
+            {Math.round(result.student.percent * 100)}%)
           </div>
-          <div className="rounded-r-full bg-gradient-to-r from-orange-400 to-red-500 text-xs py-1 w-[70%] min-w-fit text-right px-4 font-bold whitespace-nowrap">
-            R$ 865,00
+          <div
+            className={`${`w-[50%]`} rounded-r-full bg-gradient-to-r from-orange-400 to-red-500 text-xs py-1 min-w-fit text-right px-4 font-bold whitespace-nowrap`}
+          >
+            R$ {result.eliti.amount},00 (
+            {Math.round(result.eliti.percent * 100)}%)
           </div>
         </div>
 
@@ -56,7 +64,9 @@ export default function Result({ questions }: Props) {
         <p className="text-xs uppercase tracking-widest">
           Seu saldo com a ELITI ao final do mês
         </p>
-        <p className="text-2xl font-extrabold text-red-500">R$ -230,00</p>
+        <p className="text-2xl font-extrabold text-red-500">
+          R$ {result.balance.toFixed(2)}
+        </p>
       </div>
     </div>
   );

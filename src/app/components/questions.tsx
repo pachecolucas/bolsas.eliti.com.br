@@ -46,16 +46,18 @@ export default function Questions({ questions, setQuestions }: Props) {
                   sim
                 </div>
               </div>
-              {question.positive.map((p, i) => (
-                <p key={i} className="text-xs text-green-500">
-                  {p}
-                </p>
-              ))}
-              {question.negative.map((p, i) => (
-                <p key={i} className="text-xs text-red-500">
-                  {p}
-                </p>
-              ))}
+              {question.value === true &&
+                question.positive.map((p, i) => (
+                  <p key={i} className="text-xs text-green-500">
+                    {p}
+                  </p>
+                ))}
+              {question.value === false &&
+                question.negative.map((p, i) => (
+                  <p key={i} className="text-xs text-red-500">
+                    {p}
+                  </p>
+                ))}
             </div>
           </div>
         </div>
