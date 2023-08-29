@@ -134,7 +134,7 @@ const QUESTIONS: Questions = [
     description:
       "Este são gastos para a manutenção da escola incluindo: despesas com líderes bolsistas, marketing e escritório",
     positive: [
-      "Que bom que pode apoiar com os nossos gastas administrativos! Assim vamos economizar aproximadamente 145 reais todo mês com você.",
+      "Que bom que pode apoiar com os nossos gastos administrativos! Assim vamos economizar aproximadamente 145 reais todo mês com você.",
     ],
     negative: [
       "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você. Para isso, vamos gastar aproximadamente 145 reais a mais todo mês.",
