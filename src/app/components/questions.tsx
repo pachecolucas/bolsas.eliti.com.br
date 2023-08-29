@@ -1,6 +1,7 @@
 "use client";
 
 import { Questions, Question } from "@/state";
+import { useEffect, useState } from "react";
 
 type Props = {
   questions: Questions;
@@ -15,6 +16,7 @@ export default function Questions({ questions, setQuestions }: Props) {
     });
     setQuestions(newQuestions as Questions);
   };
+
   return (
     <div className="my-10 flex flex-col bg-white divide-y rounded-2xl shadow-2xl">
       {questions.map((question, i) => (
