@@ -172,10 +172,10 @@ const QUESTIONS: Questions = [
     description:
       "Este valor de 385 reais por mês nos permite receber outros estudantes que não podem pagar",
     positive: [
-      "Isso é incrível! Com este valor extra de 385 por mês você nos dá condições de recebermos outros estudantes que não podem pagar pelo nosso e precisam de ajuda para poder estudar na Eliti.",
+      "Isso é incrível! Com este valor extra de 385 por mês você nos dá condições de receber outros estudantes que não podem pagar e precisam de ajuda para poder estudar na Eliti.",
     ],
     negative: [
-      "Ok. Entedemos que é importante saber cuidar primeiro de si mesmo e colocar primeiro os pés no chão. Seu momento de devolver ao mundo também vai chegar se conseguir estudar e aprender de verdade agora.",
+      "Ok. Entedemos que é importante cuidar de si mesmo colocando primeiro os pés no chão. Se o seu momento de hoje não permite ajudar outras pessoas então venha aprender na ELITI para que um dia seja capaz de fazê-lo.",
     ],
     investiment: {
       eliti: 0,

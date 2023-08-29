@@ -12,10 +12,9 @@ export default function Whatsapp({ result }: Props) {
       </h2>
 
       <p className="text-sm px-10">
-        Se você quer a sua bolsa de{" "}
-        <span className="text-bold">{Math.round(result.percent * 100)}%</span>{" "}
-        de desconto para estudar na ELITI, peça pelo desafio número 1 no
-        whatsapp abaixo:
+        Se você quer garantir sua vaga na ELITI nesta condições entre em contato
+        com nosso Whatsapp abaixo e peça pelo pelo{" "}
+        <span className="font-bold text-lg">Desafio nº 01</span>:
       </p>
 
       <div>

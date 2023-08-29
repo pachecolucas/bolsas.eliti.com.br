@@ -103,7 +103,7 @@ export default function Result({ result }: Props) {
 
         <div className="text-xs font-bold uppercase tracking-widest flex">
           <p className="flex-1 text-left pl-5 text-green-400">
-            Quando você pagará
+            Quanto você pagará
             <br />
             para a Eliti por mês
           </p>
