@@ -43,14 +43,16 @@ export default function Result({ result }: Props) {
         <div className="mx-5 rounded-full flex border border-white relative">
           <div className="absolute h-8 border border-white left-[50%] bottom-0"></div>
           <div
-            className={`w-[${percents.student}] rounded-l-full bg-gradient-to-r from-green-900 to-green-500 text-xs py-1 min-w-fit text-left px-4 font-bold whitespace-nowrap`}
+            className={`rounded-l-full bg-gradient-to-r from-green-900 to-green-500 text-xs py-1 min-w-fit text-left px-4 font-bold whitespace-nowrap`}
+            style={{ width: percents.student }}
           >
-            R$ {result.student.amount},00 ({percents.student})
+            R$ {result.student.amount},00
           </div>
           <div
-            className={`${`w-[${percents.eliti}]`} rounded-r-full bg-gradient-to-r from-orange-400 to-red-500 text-xs py-1 min-w-fit text-right px-4 font-bold whitespace-nowrap`}
+            className={`rounded-r-full bg-gradient-to-r from-orange-400 to-red-500 text-xs py-1 min-w-fit text-right px-4 font-bold whitespace-nowrap`}
+            style={{ width: percents.eliti }}
           >
-            R$ {result.eliti.amount},00 ({percents.eliti})
+            R$ {result.eliti.amount},00
           </div>
         </div>
 
