@@ -36,8 +36,8 @@ export default function Result({ result }: Props) {
             Ao pagar a quantia de{" "}
             <span className="font-bold">{result.student.amount},00</span> reais
             por mês para a ELITI, além de pagar pelo seu curso, você vai estar
-            contribuindo para que outros estudantes que não podem pagar também
-            possam estudar em nossa escola.
+            contribuindo para que outro estudante que não pode pagar também
+            possa estudar em nossa escola.
           </p>
         </div>
       )}
