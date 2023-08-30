@@ -45,16 +45,18 @@ export default function Result({ result }: Props) {
       {result.student.amount == result.eliti.amount && (
         <div className="bg-gradient-to-r from-blue-700 to-blue-400 p-5">
           <p className="text-sm">
-            <span className="text-xl font-bold block">
-              Você pode pagar pelo seu curso
+            <span className="text-xl font-bold block uppercase">
+              Você vai receber uma bolsa de {Math.round(result.percent * 100)}%
             </span>
-            Você não precisa de nenhuma ajuda financeira e estará cobrindo todos
-            os seus custos individuais ao investir
-            <span className="font-bold text-md">
-              {" "}
-              {result.student.amount}
+            No lugar de pagar o valor cheio de{" "}
+            <span className="font-bold text-md line-through">
+              {result.price}
             </span>{" "}
-            reais mensais para estudar na ELITI.
+            reais você pagará apenas{" "}
+            <span className="font-bold text-lg">{result.student.amount}</span>{" "}
+            reais por mês para estudar na ELITI. Isso será suficiente para
+            cobrir todos os seus custos individuais sem dar nem lucro nem
+            prejuízo à ELITI.
           </p>
         </div>
       )}
@@ -69,15 +71,13 @@ export default function Result({ result }: Props) {
             <span className="font-bold text-lg">
               {Math.round(result.percent * 100)}%
             </span>{" "}
-            de desconto
-            {result.questions.transport.eliti > 0 && (
-              <span>
-                {" "}
-                mais o{" "}
-                <span className="font-bold text-md">auxílio transporte</span>
-              </span>
-            )}
-            .
+            de desconto. Dessa forma, no lugar de pagar o valor integral de{" "}
+            <span className="font-bold text-md line-through">
+              {result.price}
+            </span>{" "}
+            reais você pagará somente{" "}
+            <span className="font-bold text-lg">{result.student.amount}</span>{" "}
+            reais por mês.
           </p>
         </div>
       )}

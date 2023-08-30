@@ -99,7 +99,7 @@ const QUESTIONS: Questions = [
       "Que bom que pode pagar pelo seu transporte! Assim vamos economizar aproximadamente 240 reais todo mês com você.",
     ],
     negative: [
-      "Neste caso a Eliti irá verificar a possibilidade de arcar com o seu transporte. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
+      "Neste caso a Eliti vai pagar pelo seu transporte. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês com você.",
     ],
     investiment: {
       eliti: 240,
@@ -118,7 +118,7 @@ const QUESTIONS: Questions = [
       "Que bom que pode pagar pela sua alimentação! Assim vamos economizar aproximadamente 240 reais todo mês com você.",
     ],
     negative: [
-      "Neste caso a Eliti irá verificar a possibilidade pagar pela sua alimentação. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
+      "Neste caso a Eliti não irá cobrar este custo de aproximadamente 240 reias por mês de você.",
     ],
     investiment: {
       eliti: 240,
@@ -137,7 +137,7 @@ const QUESTIONS: Questions = [
       "Que bom que pode apoiar com os nossos gastos administrativos! Assim vamos economizar aproximadamente 145 reais todo mês com você.",
     ],
     negative: [
-      "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você. Para isso, vamos gastar aproximadamente 145 reais a mais todo mês.",
+      "Neste caso a Eliti não irá cobrar este custo de aproximadamente 145 reias por mês de você.",
     ],
     investiment: {
       eliti: 145,
@@ -156,7 +156,7 @@ const QUESTIONS: Questions = [
       "Que bom que pode contribuir com os nossos educadores! Assim vamos economizar aproximadamente 240 reais todo mês com você.",
     ],
     negative: [
-      "Neste caso a Eliti irá verificar a possibilidade de não repassar este custo a você. Para isso, vamos gastar aproximadamente 240 reais a mais todo mês.",
+      "Neste caso a Eliti não irá cobrar este custo de aproximadamente 240 reias por mês de você.",
     ],
     investiment: {
       eliti: 240,
@@ -168,9 +168,9 @@ const QUESTIONS: Questions = [
     key: "donate",
     icon: iconHeart,
     title:
-      "VOCÊ PODE CONTRIBUIR COM 385 REAIS A MAIS POR MÊS PARA AJUDAR A ELITI?",
+      "VOCÊ PODE APOIAR OUTRO ESTUDANTE A FREQUENTAR A ELITI COM UM VALOR EXTRA DE 685 REAIS POR MÊS?",
     description:
-      "Este valor de 385 reais por mês nos permite receber outros estudantes que não podem pagar",
+      "Este valor de 685 reais por mês nos permite receber outros estudante que não pode pagar",
     positive: [
       "Isso é incrível! Com este valor extra de 385 por mês você nos dá condições de receber outros estudantes que não podem pagar e precisam de ajuda para poder estudar na Eliti.",
     ],
@@ -179,15 +179,16 @@ const QUESTIONS: Questions = [
     ],
     investiment: {
       eliti: 0,
-      student: 385,
+      student: 625,
     },
     value: true,
   },
 ];
 
 const INITIAL_RESULT = {
+  price: 1250,
   completed: false,
-  percent: 0, // valor da bolsa
+  percent: 0,
   balance: 0,
   eliti: {
     amount: 0,
@@ -303,9 +304,8 @@ export function getResult(questions: Questions): Result {
   result.student.percent =
     result.student.amount / (result.eliti.amount + result.student.amount);
 
-  result.percent =
-    (result.eliti.amount - result.student.amount) /
-    (result.eliti.amount + result.student.amount);
+  result.percent = 1 - result.student.amount / result.price;
+  // (result.eliti.amount + result.student.amount);
 
   // balance
   result.balance = result.student.amount - result.eliti.amount;

@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div className="max-w-[800px] mx-auto px-5 text-slate-900">
-      <Hero />
+      <Hero result={result} />
       <Questions questions={questions} setQuestions={setQuestions} />
       {result.completed && (
         <>
