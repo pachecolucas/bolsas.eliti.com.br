@@ -67,17 +67,32 @@ export default function Result({ result }: Props) {
             <span className="text-xl font-bold block uppercase">
               Estudante precisa de ajuda
             </span>
-            Para estudar na ELITI você precisa de uma bolsa de{" "}
+            Para estudar na ELITI você precisa de uma{" "}
+            <span className="font-bold text-lg">bolsa</span> de{" "}
             <span className="font-bold text-lg">
               {Math.round(result.percent * 100)}%
             </span>{" "}
-            de desconto. Dessa forma, no lugar de pagar o valor integral de{" "}
+            de desconto{" "}
+            {result.questions.transport.eliti && (
+              <span>
+                mais ajuda com o{" "}
+                <span className="font-bold text-lg">transporte</span>
+              </span>
+            )}
+            . Dessa forma, no lugar de pagar o valor integral de{" "}
             <span className="font-bold text-md line-through">
               {result.price}
             </span>{" "}
             reais você pagará somente{" "}
             <span className="font-bold text-lg">{result.student.amount}</span>{" "}
-            reais por mês.
+            reais por mês{" "}
+            {result.questions.transport.eliti && (
+              <span>
+                e nós vamos te repassar o valor da passagem de ônibus para
+                chegar até a Eliti
+              </span>
+            )}
+            .
           </p>
         </div>
       )}
