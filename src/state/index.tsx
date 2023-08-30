@@ -175,7 +175,7 @@ const QUESTIONS: Questions = [
       "Isso é incrível! Com este valor extra de 385 por mês você nos dá condições de receber outros estudantes que não podem pagar e precisam de ajuda para poder estudar na Eliti.",
     ],
     negative: [
-      "Ok. Entedemos que é importante cuidar de si mesmo colocando primeiro os pés no chão. Se o seu momento de hoje não permite ajudar outras pessoas então venha aprender na ELITI para que um dia seja capaz de fazê-lo.",
+      "Ok. Entedemos que é importante primeiro colocar os pés no chão. Se o seu momento de hoje não permite ajudar outras pessoas então venha aprender na ELITI para que um dia seja capaz de fazê-lo.",
     ],
     investiment: {
       eliti: 0,
