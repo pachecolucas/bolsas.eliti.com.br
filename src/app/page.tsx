@@ -6,11 +6,14 @@ import Questions from "./components/questions";
 import Result from "./components/result";
 import Whatsapp from "./components/whatsapp";
 
-import QUESTIONS, { Result as ResultType, getResult } from "@/state";
+import QUESTIONS, { Result as ResultType, getResult, Answers } from "@/state";
 
-export default function Home() {
+type UrlProps = {
+  searchParams: Answers;
+};
+export default function Home({ searchParams: answers }: UrlProps) {
   const [questions, setQuestions] = useState(QUESTIONS);
-  const [result, setResult] = useState(getResult(questions));
+  const [result, setResult] = useState(getResult(questions, answers));
 
   useEffect(() => {
     console.log("Hora de calcular resultado");
@@ -24,7 +27,7 @@ export default function Home() {
       {result.completed && (
         <>
           <Result result={result} />
-          <Whatsapp result={result} />
+          <Whatsapp result={result} questions={questions} />
         </>
       )}
     </div>
