@@ -18,7 +18,7 @@ export default function Whatsapp({ result, questions }: Props) {
         questions[3].value ? 1 : 0,
         questions[4].value ? 1 : 0,
       ];
-      return `https%3A%2F%2Fwa.me%2F5548999826011%3Ftext%3DOl%C3%A1!%20%0A%20%0A%F0%9F%93%9D%20*Estas%20s%C3%A3o%20minhas%20respostas%20ao%20question%C3%A1rio%20s%C3%B3cio-econ%C3%B4mico%3A*%20%0Ahttps%3A%2F%2Fbolsas.eliti.com.br%3Fq1%3D${q1}%26q2%3D${q2}%26q3%3D${q3}%26q4%3D${q4}%26q5%3D${q5}%20%0A%20%0A*AGORA%20QUERO%20RECEBER%20OS%20DESAFIOS%20PARA%20ENTRAR%20NA%20ELITI*%20%F0%9F%98%83%20`;
+      return `https://wa.me/5548999826011?text=Ol%C3%A1%21++%F0%9F%93%9D+%0A%0D%2AEstas+s%C3%A3o+minhas+respostas+ao+question%C3%A1rio+s%C3%B3cio-econ%C3%B4mico%3A%2A+%0A%0Dhttps%3A%2F%2Fbolsas.eliti.com.br%2F%3Fq1%3D${q1}%26q2%3D${q2}%26q3%3D${q3}%26q4%3D${q4}%26q5%3D${q5}++%0A%0D%2AAGORA+QUERO+RECEBER+OS+DESAFIOS+PARA+ENTRAR+NA+ELITI%2A+%F0%9F%98%83+`;
     }
     setLink(getLink());
   }, [questions]);
