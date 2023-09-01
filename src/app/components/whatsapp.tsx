@@ -31,8 +31,9 @@ export default function Whatsapp({ result, questions }: Props) {
 
       <p className="text-sm px-10">
         Se você quer garantir sua vaga na ELITI nestas condições entre em
-        contato com nosso Whatsapp abaixo e peça pelo{" "}
-        <span className="font-bold text-lg">Desafio nº 01</span>:
+        contato clicando no botão do <span className="font-bold">WhatsApp</span>{" "}
+        abaixo para enviar suas respostas e pedir pelo{" "}
+        <span className="font-bold text-lg">Desafio nº 2</span>:
       </p>
 
       <div>
@@ -41,7 +42,7 @@ export default function Whatsapp({ result, questions }: Props) {
           href={link}
           className="bg-green-800 hover:bg-green-700 py-4 m-1 flex justify-center align-middle rounded-b-[13px] text-xs uppercase font-bold tracking-wider"
         >
-          Continuar por Whatsapp
+          Enviar resposta por WhatsApp
         </a>
       </div>
     </div>
