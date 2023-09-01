@@ -18,7 +18,7 @@ export default function Whatsapp({ result, questions }: Props) {
         questions[3].value ? 1 : 0,
         questions[4].value ? 1 : 0,
       ];
-      return `https://wa.me/5548999826011?text=*Estas%20s%C3%A3o%20minhas%20respostas%20ao%20Desafio%20N%C2%BA%201%3A*%0Abolsas.eliti.com.br%3Fq1%3D${q1}%26q2%3D${q2}%26q3%3D${q3}%26q4%3D${q4}%26q5%3D${q5}%0A%0A*AGORA%20QUERO%20O%20DESAFIO%20N%C2%BA%202%20PARA%20ENTRAR%20NA%20ELITI*%20%F0%9F%98%83`;
+      return `https://wa.me/5548999826011?text=*Estas%20s%C3%A3o%20minhas%20respostas%20ao%20Desafio%20N%C2%BA%201%20para%20entrar%20na%20ELITI%3A*%0Abolsas.eliti.com.br%3Fq1%3D${q1}%26q2%3D${q2}%26q3%3D${q3}%26q4%3D${q4}%26q5%3D${q5}%0A%0A*AGORA%20QUERO%20O%20DESAFIO%20N%C2%BA%202!*%20%F0%9F%98%83`;
     }
     setLink(getLink());
   }, [questions]);
