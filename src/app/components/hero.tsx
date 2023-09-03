@@ -6,7 +6,7 @@ type Props = {
 
 export default function Hero({ result }: Props) {
   return (
-    <div className="my-10 flex flex-col gap-5 text-center">
+    <div className="my-10 flex flex-col gap-5 text-center text-white">
       <div>
         <h1 className="text-xl font-extrabold uppercase">
           Desafio <span className="text-[2em]">1</span> da ELITI
@@ -16,17 +16,19 @@ export default function Hero({ result }: Props) {
         PARABÉNS PELO INTERESSE EM ESTUDAR COMPUTAÇÃO, INGLÊS, FINANÇAS E
         LIDERANÇA NA ELITI
       </h1>
-      <p className="text-slate-600">
+      <p className="text-slate-600 bg-white p-5 rounded-2xl shadow-2xl font-bold">
         O preço do nosso treinamento é de{" "}
-        <span className="text-red-500 font-bold">{result.price},00</span> reias
-        por mês e oferemos bolsas de acordo com a necessidade de cada estudante
-        que podem chegar a{" "}
-        <span className="text-green-500 font-bold">100%</span> de desconto!
+        <span className="text-red-500 font-bold text-lg">
+          {result.price},00
+        </span>{" "}
+        reias por mês e oferemos bolsas de acordo com a necessidade de cada
+        estudante que podem chegar a até{" "}
+        <span className="text-green-600 font-bold text-lg">100%</span> de
+        desconto!
       </p>
       <p className="text-sm">
-        O desafio número 1 é responder honestamente ao breve questionário
-        sócio-econômico abaixo para que possamos te conhecer melhor e assim
-        iniciar o mais rapidamente possível os seus estudos na ELITI:
+        Para sabermos com ajudá-lo responda honestamente ao breve questionário
+        sócio-econômico abaixo:
       </p>
     </div>
   );
