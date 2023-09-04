@@ -237,11 +237,11 @@ function _getKeyValue(
 }
 
 export type Answers = {
-  q1?: "0" | "1";
-  q2?: "0" | "1";
-  q3?: "0" | "1";
-  q4?: "0" | "1";
-  q5?: "0" | "1";
+  a1?: boolean;
+  a2?: boolean;
+  a3?: boolean;
+  a4?: boolean;
+  a5?: boolean;
 };
 
 export function getResult(questions: Questions, answers?: Answers): Result {
@@ -251,7 +251,8 @@ export function getResult(questions: Questions, answers?: Answers): Result {
 
   // transport
   let item = questions.find((q) => q.key === "transport");
-  item && answers?.q1 === "0" ? (item.value = false) : null;
+  console.log({ item }, item?.value, answers?.a1);
+  item && answers?.a1 === false ? (item.value = false) : null;
   result.questions.transport = {
     eliti: !item?.value ? (item?.investiment.eliti as number) : 0, // eliti só gasta se o estudante não pagar
     student: item?.value ? (item?.investiment.student as number) : 0,
@@ -259,7 +260,7 @@ export function getResult(questions: Questions, answers?: Answers): Result {
 
   // food
   item = questions.find((q) => q.key === "food");
-  item && answers?.q2 === "0" ? (item.value = false) : null;
+  item && answers?.a2 === false ? (item.value = false) : null;
   result.questions.food = {
     eliti: item?.investiment.eliti as number, // eliti gasta mesmo com estudante pagando
     student: item?.value ? (item?.investiment.student as number) : 0,
@@ -267,7 +268,7 @@ export function getResult(questions: Questions, answers?: Answers): Result {
 
   // admin
   item = questions.find((q) => q.key === "admin");
-  item && answers?.q3 === "0" ? (item.value = false) : null;
+  item && answers?.a3 === false ? (item.value = false) : null;
   result.questions.admin = {
     eliti: item?.investiment.eliti as number, // eliti gasta mesmo com estudante pagando
     student: item?.value ? (item?.investiment.student as number) : 0,
@@ -275,7 +276,7 @@ export function getResult(questions: Questions, answers?: Answers): Result {
 
   // teacher
   item = questions.find((q) => q.key === "teacher");
-  item && answers?.q4 === "0" ? (item.value = false) : null;
+  item && answers?.a4 === false ? (item.value = false) : null;
   result.questions.teacher = {
     eliti: item?.investiment.eliti as number, // eliti gasta mesmo com estudante pagando
     student: item?.value ? (item?.investiment.student as number) : 0,
@@ -283,7 +284,7 @@ export function getResult(questions: Questions, answers?: Answers): Result {
 
   // donate
   item = questions.find((q) => q.key === "donate");
-  item && answers?.q5 === "0" ? (item.value = false) : null;
+  item && answers?.a5 === false ? (item.value = false) : null;
   result.questions.donate = {
     eliti: item?.investiment.eliti as number, // eliti deixa de ganhar, mas nunca gasta
     student: item?.value ? (item?.investiment.student as number) : 0,

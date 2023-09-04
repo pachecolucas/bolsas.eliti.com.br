@@ -8,10 +8,16 @@ import Whatsapp from "./components/whatsapp";
 
 import QUESTIONS, { Result as ResultType, getResult, Answers } from "@/state";
 
-type UrlProps = {
-  searchParams: Answers;
+type SearchParams = {
+  a?: string;
 };
-export default function Home({ searchParams: answers }: UrlProps) {
+
+type UrlProps = {
+  searchParams: SearchParams;
+};
+
+export default function Home({ searchParams }: UrlProps) {
+  const answers = _convertSearchParamsToAnwsers(searchParams);
   const [questions, setQuestions] = useState(QUESTIONS);
   const [result, setResult] = useState(getResult(questions, answers));
 
@@ -32,4 +38,19 @@ export default function Home({ searchParams: answers }: UrlProps) {
       )}
     </div>
   );
+}
+
+function _convertSearchParamsToAnwsers(
+  searchParams: SearchParams
+): Answers | undefined {
+  const values = searchParams.a?.split("").map((v) => v === "1");
+  if (!values) return;
+  const [a1, a2, a3, a4, a5] = values;
+  return {
+    a1: !!a1,
+    a2: !!a2,
+    a3: !!a3,
+    a4: !!a4,
+    a5: !!a5,
+  };
 }
