@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'pixel';
+    src: url('/fonts/Symtext.ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
     background-color: #0F232E;
@@ -12,4 +19,10 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
+}
+
+h1, h3, h5 {
+    font-family: pixel;
+    text-decoration: none;
+    color: inherit;
 }
